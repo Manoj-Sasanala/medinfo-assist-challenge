@@ -1,5 +1,7 @@
 # MedInfo Assist Challenge (Plan A)
 
+[![ci](https://github.com/Manoj-Sasanala/medinfo-assist-challenge/actions/workflows/ci.yml/badge.svg)](https://github.com/Manoj-Sasanala/medinfo-assist-challenge/actions/workflows/ci.yml)
+
 Citation-first RAG chatbot over organizer-supplied public-health PDF guides.
 One canonical app: **`backend.api:app`** (9.4 layout: `backend/ frontend/ contracts/ docs/`).
 
