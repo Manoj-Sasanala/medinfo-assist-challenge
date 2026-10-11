@@ -24,6 +24,20 @@ IDS_PATH = ROOT / "data" / "processed" / "embedding_ids.json"
 MODEL = "all-MiniLM-L6-v2"
 SUFFICIENT_SCORE = 0.30  # calibrated on gold queries, see docs/PIVOT_LOG.md
 
+# Runtime degradation record (process-local): file-level readiness (semantic_ready)
+# cannot see request-time model failures, so every fallback caused by a present-
+# but-broken semantic path is counted here and surfaced via /api/health.
+_RUNTIME = {"semantic_fallbacks": 0, "last_semantic_error": None}
+
+
+def runtime_status() -> dict:
+    return dict(_RUNTIME)
+
+
+def _record_fallback(reason: str) -> None:
+    _RUNTIME["semantic_fallbacks"] += 1
+    _RUNTIME["last_semantic_error"] = reason
+
 _WORD = re.compile(r"[a-z0-9]+")
 _STOP = frozenset(
     "a an the of is are was were be been to in on for with what when where which who how why "
@@ -110,6 +124,8 @@ def retrieve(query: str, top_k: int = 5, query_id: str = "q") -> CT02EvidencePac
     if model is None:
         # files present but unloadable = broken; files absent = never built
         broken = INDEX_PATH.exists() and IDS_PATH.exists()
+        if broken:
+            _record_fallback("index_unloadable")
         return _lexical_pack(query, top_k, query_id,
                              reason_code="index_unavailable" if broken else "index_not_ready")
     try:
@@ -121,7 +137,8 @@ def retrieve(query: str, top_k: int = 5, query_id: str = "q") -> CT02EvidencePac
         for rank, (i, s) in enumerate(zip(idx[0], scores[0]), start=1):
             c = by_id[ids[int(i)]]
             hits.append(CT02Hit(chunk=c, score=round(float(s), 4), rank=rank))
-    except Exception:
+    except Exception as e:
+        _record_fallback(f"search_or_encode_failed: {type(e).__name__}")
         return _lexical_pack(query, top_k, query_id, reason_code="index_unavailable")
     status = "sufficient" if hits and hits[0].score >= SUFFICIENT_SCORE else "insufficient"
     return CT02EvidencePack(

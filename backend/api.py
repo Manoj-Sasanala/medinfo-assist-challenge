@@ -46,12 +46,23 @@ def _readiness() -> dict:
         sources.append({**m, "raw_present": raw.exists(),
                         "chunks_indexed": sum(1 for c in corpus if c.get("source_id") == m["source_id"])})
     ready = bool(corpus) and ret.semantic_ready() and any(s["chunks_indexed"] > 0 for s in sources)
+    sem = ret.semantic_ready()
+    rt = ret.runtime_status()
     return {
         "status": "ok" if ready else "not_ready",
-        "retrieval": "semantic" if ret.semantic_ready() else "lexical_fallback",
+        "retrieval": "semantic" if sem else "lexical_fallback",
         "chunks": len(corpus),
         "index_present": INDEX_PATH.exists(),
         "sources": sources,
+        # Degraded-state visibility: file-level readiness above cannot see
+        # request-time failures, so runtime fallbacks and validator mode are
+        # reported explicitly. Per-response fallback is in CT-02 reason_code.
+        "degraded": {
+            "semantic_fallbacks": rt["semantic_fallbacks"],
+            "last_semantic_error": rt["last_semantic_error"],
+            "nli_available": val.nli_available(),
+            "validator": val.validator_mode(),
+        },
     }
 
 

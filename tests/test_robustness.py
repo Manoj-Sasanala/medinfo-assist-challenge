@@ -197,3 +197,34 @@ def test_model_id_overridable_and_current():
     from backend import generate as gen
     assert gen._MODEL != "gemini-2.5-flash"  # retired 404; must track a live model
     assert gen._MODEL
+
+
+def test_degraded_state_visible_in_health(monkeypatch):
+    from fastapi.testclient import TestClient
+    from backend.api import app
+    def boom(*a, **k):
+        raise RuntimeError("no model")
+    monkeypatch.setattr(ret, "SentenceTransformer", boom)
+    ret._semantic.cache_clear()
+    t = TestClient(app)
+    try:
+        j = t.post("/api/search", json={"question": "What should blood glucose be?"}).json()
+        assert j["retrieval_method"] == "lexical" and j["reason_code"] == "index_unavailable"
+        h = t.get("/api/health").json()
+        assert h["degraded"]["semantic_fallbacks"] >= 1
+        assert isinstance(h["degraded"]["last_semantic_error"], str)
+    finally:
+        ret._semantic.cache_clear()
+
+
+def test_validator_mode_reported(monkeypatch):
+    from fastapi.testclient import TestClient
+    from backend.api import app
+    from backend import validate as val
+    t = TestClient(app)
+    h = t.get("/api/health").json()
+    assert h["degraded"]["validator"] in ("heuristic+nli", "heuristic-only")
+    assert h["degraded"]["nli_available"] == (h["degraded"]["validator"] == "heuristic+nli")
+    monkeypatch.setattr(val, "_nli", lambda: (None, None))
+    assert val.validator_mode() == "heuristic-only"
+    assert val.nli_ungrounded_sentences("Target is 70 to 130.", []) == []

@@ -20,3 +20,4 @@ Adding a requirement without a mapped test fails the build
 | R-12 | Health/sources report honest CT-06 readiness incl. absent-raw case (CT-06) | test_health_readiness_fields, test_sources_endpoint_ct06, test_manifest_json_matches_corpus |
 | R-13 | No secrets in repo (Step 8) | pre-push `git grep` scan for key/token patterns |
 | R-14 | Five-guide corpus + labelled 90%/100% gates (01/06/07) | OPEN — blocked on organizer PDFs + terms |
+| R-15 | Degraded states visible: runtime semantic fallbacks + validator mode in /api/health; per-response reason in CT-02 (review round 3) | test_degraded_state_visible_in_health, test_validator_mode_reported |
