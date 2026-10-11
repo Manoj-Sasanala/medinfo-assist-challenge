@@ -7,4 +7,6 @@ pymupdf>=1.28
 pypdf>=6.0
 faiss-cpu>=1.11
 sentence-transformers>=3.0
+torch>=2.0
+transformers>=4.40
 pytest>=8.0

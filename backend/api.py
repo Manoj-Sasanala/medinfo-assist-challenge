@@ -89,6 +89,9 @@ def api_chat(body: CT04ChatRequest) -> dict:
     text = gen.generate(q, pack.results)
     cited = pack.results[:2]  # exactly what the UI shows; grounding is checked against these
     if text is None or not val.grounded(text, cited):
+        # Extractive fallback is served WITHOUT re-validation: it is a verbatim
+        # quote by construction, so it cannot add claims (its "From T (page N):"
+        # framing is provenance, not a claim — see test_nli_rejects_extra_claim).
         text = gen.extractive(pack.results)  # ungrounded prose is never served
     cites = [CT05Citation(document_title=h.chunk.document_title, pdf_page=h.chunk.pdf_page,
                            printed_page_label=h.chunk.printed_page_label,
