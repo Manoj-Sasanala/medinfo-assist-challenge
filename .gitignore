@@ -1,0 +1,22 @@
+# secrets - never commit keys
+.env
+.env.*
+*API_KEY*
+*TOKEN*
+!requirements*.txt
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# data - real PDFs stay local (may be licensed); manifest + derived index are committed only if synthetic
+data/raw/*.pdf
+data/raw/*.PDF
+
+# os/editor
+.DS_Store
+Thumbs.db
+.vscode/
