@@ -92,6 +92,12 @@ def nli_available() -> bool:
     return tok is not None
 
 
+def validator_mode() -> str:
+    """Which grounding layers are active. Served via /api/health so a missing
+    NLI model (heuristic-only mode) is visible instead of silent."""
+    return "heuristic+nli" if nli_available() else "heuristic-only"
+
+
 def nli_entailment(premise: str, hypothesis: str) -> float:
     """P(entailment) of hypothesis given premise. Raises if NLI unavailable."""
     import torch
