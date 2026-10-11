@@ -45,11 +45,39 @@ def _corpus() -> list[CT01Chunk]:
 
 @lru_cache(maxsize=1)
 def _semantic():
-    if not (INDEX_PATH.exists() and IDS_PATH.exists()):
+    """Load (model, index, ids) or (None, None, None).
+
+    Any failure — corrupt index, mismatched ids, model-load error — degrades
+    to lexical instead of raising. Never probe this for health checks (it
+    loads the model); use semantic_ready() for the cheap file-level check.
+    """
+    try:
+        if not (INDEX_PATH.exists() and IDS_PATH.exists()):
+            return None, None, None
+        index = faiss.read_index(str(INDEX_PATH))
+        ids = json.loads(IDS_PATH.read_text(encoding="utf-8"))
+        if not isinstance(ids, list) or len(ids) != index.ntotal:
+            return None, None, None  # id/index mismatch: index is untrustworthy
+        corpus_ids = {c.chunk_id for c in _corpus()}
+        if any(i not in corpus_ids for i in ids):
+            return None, None, None  # index points at unknown chunks
+        return SentenceTransformer(MODEL), index, ids
+    except Exception:
         return None, None, None
-    index = faiss.read_index(str(INDEX_PATH))
-    ids = json.loads(IDS_PATH.read_text(encoding="utf-8"))
-    return SentenceTransformer(MODEL), index, ids
+
+
+def semantic_ready() -> bool:
+    """Cheap file-level check (no model load): index readable, ids consistent."""
+    try:
+        if not (INDEX_PATH.exists() and IDS_PATH.exists()) or not _corpus():
+            return False
+        index = faiss.read_index(str(INDEX_PATH))
+        ids = json.loads(IDS_PATH.read_text(encoding="utf-8"))
+        corpus_ids = {c.chunk_id for c in _corpus()}
+        return (isinstance(ids, list) and len(ids) == index.ntotal
+                and all(i in corpus_ids for i in ids))
+    except Exception:
+        return False
 
 
 def _lexical(query: str, top_k: int) -> list[tuple[CT01Chunk, float]]:
@@ -79,7 +107,12 @@ def retrieve(query: str, top_k: int = 5, query_id: str = "q") -> CT02EvidencePac
                                 results=[], retrieval_method="lexical",
                                 reason_code="corpus_unavailable")
     model, index, ids = _semantic()
-    if model is not None:
+    if model is None:
+        # files present but unloadable = broken; files absent = never built
+        broken = INDEX_PATH.exists() and IDS_PATH.exists()
+        return _lexical_pack(query, top_k, query_id,
+                             reason_code="index_unavailable" if broken else "index_not_ready")
+    try:
         qv = np.asarray(model.encode([query], normalize_embeddings=True), dtype=np.float32)
         scores, idx = index.search(qv, top_k)
         chunks = _corpus()
@@ -88,16 +121,21 @@ def retrieve(query: str, top_k: int = 5, query_id: str = "q") -> CT02EvidencePac
         for rank, (i, s) in enumerate(zip(idx[0], scores[0]), start=1):
             c = by_id[ids[int(i)]]
             hits.append(CT02Hit(chunk=c, score=round(float(s), 4), rank=rank))
-        status = "sufficient" if hits and hits[0].score >= SUFFICIENT_SCORE else "insufficient"
-        return CT02EvidencePack(
-            query_id=query_id, evidence_status=status, results=hits,
-            retrieval_method="semantic",
-            reason_code=None if status == "sufficient" else "below_threshold",
-        )
+    except Exception:
+        return _lexical_pack(query, top_k, query_id, reason_code="index_unavailable")
+    status = "sufficient" if hits and hits[0].score >= SUFFICIENT_SCORE else "insufficient"
+    return CT02EvidencePack(
+        query_id=query_id, evidence_status=status, results=hits,
+        retrieval_method="semantic",
+        reason_code=None if status == "sufficient" else "below_threshold",
+    )
+
+
+def _lexical_pack(query: str, top_k: int, query_id: str, reason_code: str) -> CT02EvidencePack:
     lex = _lexical(query, top_k)
     hits = [CT02Hit(chunk=c, score=s, rank=r) for r, (c, s) in enumerate(lex, start=1)]
     return CT02EvidencePack(
         query_id=query_id,
         evidence_status="sufficient" if hits else "insufficient",
-        results=hits, retrieval_method="lexical", reason_code="index_not_ready",
+        results=hits, retrieval_method="lexical", reason_code=reason_code,
     )
