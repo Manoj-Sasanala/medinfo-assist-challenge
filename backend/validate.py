@@ -1,11 +1,21 @@
 """Claim-level grounding check (Lane 4): every substantive sentence must trace
 to the CITED passages (the top hits actually shown to the user), not just the
-wider evidence set. Heuristic (word-overlap), documented as such: it catches
-unsupported additions, not paraphrase-level entailment.
+wider evidence set.
+
+Two layers, both must pass:
+  1. Lexical heuristic (fast): per-sentence word-overlap with cited passages.
+  2. NLI entailment (typeform/distilbert-base-uncased-mnli, lazy): each
+     substantive sentence must be ENTAILED by the cited passages
+     (P(entailment) >= 0.5). Neutral/contradiction-dominant sentences fail.
+
+If the NLI model cannot load, layer 1 alone decides and the caller is told via
+nli_available(). Anything failing either layer falls back to the extractive
+quote (which cannot add claims by construction).
 """
 from __future__ import annotations
 
 import re
+from functools import lru_cache
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -20,6 +30,8 @@ _STOP = frozenset(
 )
 SENT_COVERAGE = 0.25
 MIN_COVERAGE = 0.30  # whole-answer floor, kept for diagnostics
+NLI_MODEL = "typeform/distilbert-base-uncased-mnli"
+NLI_ENTAIL_MIN = 0.5
 
 
 def _toks(s: str) -> set[str]:
@@ -55,4 +67,55 @@ def ungrounded_sentences(answer: str, hits: list[CT02Hit]) -> list[str]:
 
 
 def grounded(answer: str, hits: list[CT02Hit]) -> bool:
-    return coverage(answer, hits) >= MIN_COVERAGE and not ungrounded_sentences(answer, hits)
+    if coverage(answer, hits) < MIN_COVERAGE or ungrounded_sentences(answer, hits):
+        return False
+    nli_bad = nli_ungrounded_sentences(answer, hits)
+    return not nli_bad
+
+
+@lru_cache(maxsize=1)
+def _nli():
+    """(tokenizer, model) or (None, None) if unavailable. Lazy: ~250MB download once."""
+    try:
+        import torch
+        from transformers import AutoModelForSequenceClassification, AutoTokenizer
+        tok = AutoTokenizer.from_pretrained(NLI_MODEL)
+        mdl = AutoModelForSequenceClassification.from_pretrained(NLI_MODEL)
+        mdl.eval()
+        return tok, mdl
+    except Exception:
+        return None, None
+
+
+def nli_available() -> bool:
+    tok, mdl = _nli()
+    return tok is not None
+
+
+def nli_entailment(premise: str, hypothesis: str) -> float:
+    """P(entailment) of hypothesis given premise. Raises if NLI unavailable."""
+    import torch
+    tok, mdl = _nli()
+    if tok is None:
+        raise RuntimeError("NLI model unavailable")
+    with torch.no_grad():
+        logits = mdl(**tok(premise, hypothesis, return_tensors="pt", truncation=True)).logits
+        probs = torch.softmax(logits, dim=-1)[0]
+    entail_idx = next(i for i, l in mdl.config.id2label.items() if l.upper() == "ENTAILMENT")
+    return round(float(probs[int(entail_idx)]), 4)
+
+
+def nli_ungrounded_sentences(answer: str, hits: list[CT02Hit]) -> list[str]:
+    if not nli_available():
+        return []
+    premise = "\n".join(h.chunk.text for h in hits)[:3000]
+    bad = []
+    for s in sentences(answer):
+        if len(_toks(s)) < 3:
+            continue
+        try:
+            if nli_entailment(premise, s) < NLI_ENTAIL_MIN:
+                bad.append(s)
+        except Exception:
+            bad.append(s)  # NLI error fails closed
+    return bad

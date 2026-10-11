@@ -161,3 +161,39 @@ def test_answer_with_extra_claim_is_ungrounded():
     assert not val.grounded(answer, hits)
     bad = val.ungrounded_sentences(answer, hits)
     assert len(bad) == 1 and "insulin" in bad[0]
+
+
+def test_nli_entailment_calibration():
+    """Real entailment (not overlap): paraphrase entails, novel/unrelated does not."""
+    from backend import validate as val
+    if not val.nli_available():
+        import pytest
+        pytest.skip("NLI model unavailable")
+    prem = "Your target blood glucose before meals is 70 to 130."
+    assert val.nli_entailment(prem, "Target is 70 to 130 before meals.") >= 0.5
+    assert val.nli_entailment(prem, "Also take 5 units of insulin every morning.") < 0.5
+    assert val.nli_entailment(prem, "The capital of France is Paris.") < 0.5
+
+
+def test_nli_rejects_extra_claim_accepts_extractive():
+    from contracts.schemas import CT02Hit
+    from backend import validate as val
+    from backend import generate as gen
+    if not val.nli_available():
+        import pytest
+        pytest.skip("NLI model unavailable")
+    chunk = CT01Chunk(chunk_id="c1", source_id="s", document_title="T",
+                      filename="f.pdf", pdf_page=8,
+                      text="Your target blood glucose before meals is 70 to 130.")
+    hits = [CT02Hit(chunk=chunk, score=0.9, rank=1)]
+    assert not val.grounded("Target is 70 to 130. Also take 5 units of insulin.", hits)
+    # Extractive output is exempt by construction (verbatim quote); only its
+    # quoted body needs to entail. The "From T (page 8):" framing is provenance.
+    body = gen.extractive(hits).split(":", 1)[1]
+    assert val.nli_ungrounded_sentences(body, hits) == []
+
+
+def test_model_id_overridable_and_current():
+    from backend import generate as gen
+    assert gen._MODEL != "gemini-2.5-flash"  # retired 404; must track a live model
+    assert gen._MODEL

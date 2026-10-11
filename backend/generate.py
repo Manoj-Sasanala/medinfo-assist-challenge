@@ -1,4 +1,10 @@
-"""Answer generation: Gemini 2.5-flash when keyed, else extractive fallback."""
+"""Answer generation: current Gemini flash model when keyed, else extractive fallback.
+
+Model id defaults to gemini-3.8-flash (gemini-2.5-flash was retired: 404 as of
+2026-10-11) and can be overridden with GEMINI_MODEL. Any provider failure
+(retired model, 503 overload, quota) returns None so the caller serves the
+extractive quote instead of failing.
+"""
 from __future__ import annotations
 
 import os
@@ -7,7 +13,7 @@ import httpx
 
 from contracts.schemas import CT02Hit
 
-_MODEL = "gemini-2.5-flash"
+_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
 _SYSTEM = (
     "Phrase ONLY what the supplied guide passages support. "
     "Every claim must trace to a passage. If insufficient, say so. "
