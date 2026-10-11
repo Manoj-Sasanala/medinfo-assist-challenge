@@ -1,6 +1,18 @@
 # Plan A / Plan B record (Lane 4)
 
-Plan A attempted FIRST, per 07 proof checkpoints. No pivot.
+Plan A attempted FIRST, per 07 proof checkpoints. No pivot on retrieval.
+
+## Generation model retirement (found 2026-10-11 — disclosure)
+
+`gemini-2.5-flash` returns **404 retired**. Consequence: every `answered`
+response served before this date was the **extractive fallback**, never Gemini
+prose. The fallback worked exactly as designed (no crash, no ungrounded text),
+but all earlier claims of "Gemini generation" were wrong — the serving path was
+never verified end to end.
+Fix: default model is now `gemini-3.8-flash` (verified HTTP 200), overridable
+via `GEMINI_MODEL`; any provider failure (retirement, 503 overload, quota)
+returns None and serves the extractive quote. Lesson recorded in
+docs/ACCEPTANCE.md R-02/R-10: verify the serving path, not just the code path.
 
 ## Plan A: semantic (all-MiniLM-L6-v2, 384-dim, FAISS IndexFlatIP)
 

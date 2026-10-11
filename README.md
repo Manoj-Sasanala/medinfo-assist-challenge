@@ -18,6 +18,7 @@ as final acceptance.
 python -m venv .venv; .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 $env:GOOGLE_API_KEY = "<your key>"   # Gemini generation (optional; extractive fallback otherwise)
+# $env:GEMINI_MODEL = "gemini-3.8-flash"  # default; override if the model is retired/overloaded
 python -m uvicorn backend.api:app --port 8000
 # open http://127.0.0.1:8000/
 python -m pytest -q
