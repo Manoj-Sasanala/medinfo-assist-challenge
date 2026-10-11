@@ -1,16 +1,542 @@
 [
-  {"chunk_id": "ed-01-targets", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 2, "section_title": "Blood Glucose Levels", "text": "Target blood glucose for people with diabetes: before meals 70 to 130; 1 to 2 hours after the start of a meal less than 180. Ask your doctor how often to check and for an A1C test at least twice a year."},
-  {"chunk_id": "ed-02-hypo", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 7, "section_title": "Low Blood Glucose (Hypoglycemia)", "text": "Low blood glucose (below 70) can make you feel shaky, weak, confused, irritable, hungry, or tired. Have 3-4 glucose tablets, 1/2 cup fruit juice, 1/2 cup regular soft drink, 1 cup milk, 5-6 hard candies, or 1 tablespoon sugar or honey; recheck after 15 minutes and repeat until 70 or higher."},
-  {"chunk_id": "ed-03-pyramid", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 8, "section_title": "The Diabetes Food Pyramid", "text": "The diabetes food pyramid divides foods by content. Eat more from groups at the bottom (starches, vegetables, fruits) and less from the top (fats and sweets). Foods from starches, fruits, vegetables, and milk groups are highest in carbohydrate and affect blood glucose most."},
-  {"chunk_id": "ed-04-cal1200", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 9, "section_title": "How much should I eat each day?", "text": "About 1,200 to 1,600 calories a day: 6 starches, 2 milks, 3 vegetables, 4 to 6 ounces meat and meat substitutes, 2 fruits, up to 3 fats. Make a meal plan with your diabetes teacher that fits routine and medicines."},
-  {"chunk_id": "ed-05-starch-def", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 13, "section_title": "Starches", "text": "Starches are bread, grains, cereal, pasta, and starchy vegetables like corn and potatoes. They provide carbohydrate, vitamins, minerals, and fiber. Whole grain starches are healthier. Eat some starches at each meal."},
-  {"chunk_id": "ed-06-starch-serv", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 14, "section_title": "How much is a serving of starch?", "text": "One starch serving: 1 slice bread, 1 small potato, 1/2 cup cooked cereal or 3/4 cup dry cereal flakes, or 1 6-inch tortilla. Two servings: 2 slices bread. Three servings: 1 cup rice."},
-  {"chunk_id": "ed-07-veg", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 17, "section_title": "Vegetables", "text": "Vegetables provide vitamins, minerals, and fiber. They are low in carbohydrate. Examples: lettuce, broccoli, peppers, carrots, green beans, spinach, tomatoes."},
-  {"chunk_id": "ed-08-fruit", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 21, "section_title": "Fruits", "text": "Fruits provide carbohydrate, vitamins, minerals, and fiber. Examples: apples, bananas, oranges, berries, mango, papaya. Choose whole fruit more often than juice; whole fruit is more filling and has more fiber."},
-  {"chunk_id": "ed-09-milk", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 25, "section_title": "Milk", "text": "Milk provides carbohydrate, protein, calcium, vitamins, and minerals. Drink fat-free (skim) or low-fat (1%) milk. If pregnant or breastfeeding, have four to five servings of milk each day."},
-  {"chunk_id": "ed-10-meat", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 29, "section_title": "Meat and Meat Substitutes", "text": "The meat group includes meat, poultry, eggs, cheese, fish, and tofu. Eat small amounts each day. Three ounces of cooked lean meat is about the size of a deck of cards. Cook in low-fat ways: broil, grill, roast, steam, microwave."},
-  {"chunk_id": "ed-11-fats", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 33, "section_title": "Fats and Sweets", "text": "Limit fats and sweets. Fats have a lot of calories; sweets can be high in carbohydrate and fat. Limiting them helps weight and keeps blood glucose and blood fats under control."},
-  {"chunk_id": "ed-12-alcohol", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 37, "section_title": "Alcoholic Drinks", "text": "Alcoholic drinks have calories but no nutrients. On an empty stomach they can make blood glucose go too low, and they can raise blood fats. Talk with your doctor about how much to have."},
-  {"chunk_id": "ed-13-measuring", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 40, "section_title": "Measuring Your Food", "text": "Use measuring cups, spoons, or a food scale to keep servings right. A 3-ounce meat serving is about a palm; 1 cup cooked vegetables, salad, or milk is a fist; 1 teaspoon oil or butter is a fingertip."},
-  {"chunk_id": "ed-14-sick", "source_id": "eating-and-diabetes-nih-08-5043", "document_title": "What I Need to Know About Eating and Diabetes", "filename": "eating-and-diabetes-nih-08-5043.pdf", "pdf_page": 42, "section_title": "When You're Sick", "text": "Being sick can raise blood glucose. Check it every 4 hours, keep taking diabetes medicines, drink at least one cup of calorie-free liquid each hour while awake. Call your provider if glucose stays above 240 for a day, you have ketones, or you vomit repeatedly."}
+  {
+    "chunk_id": "eating-p01-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 1,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Eating and Diabetes\nWhat I need to know about\nEating and Diabetes\nU.S. Department of\nHealth and Human\nServices\nNATIONAL INSTITUTES OF HEALTH\nNational Diabetes Information Clearinghouse"
+  },
+  {
+    "chunk_id": "eating-p03-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 3,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "What I need to know about\nEating and Diabetes\nU.S. Department of\nHealth and Human\nServices\nNATIONAL INSTITUTES OF HEALTH\nNational Diabetes Information Clearinghouse"
+  },
+  {
+    "chunk_id": "eating-p05-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 5,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Contents \nEating and Diabetes ........................................................... 1 \nBlood Glucose Levels......................................................... 2 \nYour Diabetes Medicines................................................... 5 \nYour Physical Activity Plan................................................ 6 \nThe Diabetes Food Pyramid.............................................. 8 \nStarches ............................................................................. 13 \nVegetables ......................................................................... 17 \nFruits.................................................................................. 21 \nMilk.................................................................................... 25 \nMeat and Meat Substitutes.............................................. 29 \nFats and Sweets....................................."
+  },
+  {
+    "chunk_id": "eating-p05-c02",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 5,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Meat Substitutes.............................................. 29 \nFats and Sweets................................................................. 33 \nAlcoholic Drinks............................................................... 37 \nYour Meal Plan................................................................. 38 \nMeasuring Your Food ...................................................... 40 \nWhen You\u2019re Sick ............................................................. 42 \nWhere can I get more information? ............................... 44"
+  },
+  {
+    "chunk_id": "eating-p07-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 7,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Eating and Diabetes \nYou can take good care of yourself and your diabetes \nby learning \n\u25cf what to eat \n\u25cf how much to eat \n\u25cf when to eat \nMaking wise food choices can help you \n\u25cf feel good every day \n\u25cf lose weight if you need to \n\u25cf lower your risk for heart disease, stroke, and other \nproblems caused by diabetes \nHealthful eating helps keep your blood glucose, also \ncalled blood sugar, in your target range. Physical activity \nand, if needed, diabetes medicines also help. The \ndiabetes target range is the blood glucose level suggested \nby diabetes experts for good health. You can help \nprevent health problems by keeping your blood glucose \nlevels on target. \n1"
+  },
+  {
+    "chunk_id": "eating-p08-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 8,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Blood Glucose Levels \nWhat should my blood glucose levels be? \nTarget Blood Glucose Levels \nfor People with Diabetes \nBefore meals \n70 to 130 \n1 to 2 hours after the \nstart of a meal \nless than 180 \nTalk with your health care provider about your blood \nglucose target levels and write them here: \nMy Target Blood Glucose Levels \nBefore meals \n______ to ______ \n1 to 2 hours after the \nstart of a meal \nless than _______ \nAsk your doctor how often you should check your blood \nglucose on your own. Also ask your doctor for an A1C \ntest at least twice a year. Your A1C number gives your \naverage blood glucose for the past 3 months. The results \nfrom your blood glucose checks and your A1C test will \ntell you whether your diabetes care plan is working. \n2"
+  },
+  {
+    "chunk_id": "eating-p09-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 9,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "How can I keep my blood glucose levels on target? \nYou can keep your blood glucose levels on target by \n\u25cf making wise food choices \n\u25cf being physically active \n\u25cf taking medicines if needed \nFor people taking certain diabetes medicines, following a \nschedule for meals, snacks, and physical activity is best. \nHowever, some diabetes medicines allow for more \nflexibility. You\u2019ll work with your health care team to \ncreate a diabetes plan that\u2019s best for you. \nLunch \n(Morning \nsnack) \n(Afternoon \nsnack) \nDinner\n(Evening \nBreakfast \nsnack) \n3"
+  },
+  {
+    "chunk_id": "eating-p10-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 10,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Talk with your doctor or diabetes teacher about how \nmany meals and snacks to eat each day. Fill in the times \nfor your meals and snacks on these clocks. \nBreakfast \nMorning snack \nLunch \nAfternoon snack \nDinner \nEvening snack \n4"
+  },
+  {
+    "chunk_id": "eating-p11-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 11,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Your Diabetes Medicines \nWhat you eat and when you eat affect how your diabetes \nmedicines work. Talk with your doctor or diabetes \nteacher about when to take your diabetes medicines. \nFill in the names of your diabetes medicines, when to \ntake them, and how much to take. Draw hands on the \nclocks to show when to take your medicines. \nName of medicine: _______________ \nTime:______ Meal: ______________ \nHow much: _____________________ \nName of medicine: _______________ \nTime:______ Meal: ______________ \nHow much: _____________________ \nName of medicine: _______________ \nTime:______ Meal: ______________ \nHow much: _____________________ \nName of medicine: _______________ \nTime:______ Meal: ______________ \nHow much: _____________________ \n5"
+  },
+  {
+    "chunk_id": "eating-p12-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 12,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Your Physical Activity Plan \nWhat you eat and when also depend on how much you \nexercise. Physical activity is an important part of staying \nhealthy and controlling your blood glucose. Keep these \npoints in mind: \n\u25cf Talk with your doctor about what types of exercise are \nsafe for you. \n\u25cf Make sure your shoes fit well and your socks stay \nclean and dry. Check your feet for redness or sores \nafter exercising. Call your doctor if you have sores \nthat do not heal. \n\u25cf Warm up and stretch for 5 to 10 minutes before you \nexercise. Then cool down for several minutes after you \nexercise. For example, walk slowly at first, stretch, and \nthen walk faster. Finish up by walking slowly again. \n\u25cf Ask your doctor whether you should exercise if your \nblood glucose level is high. \n\u25cf Ask your doctor whether you should have a snack \nbefore you exercise. \n\u25cf Know the signs of low blood glucose, also called \nh"
+  },
+  {
+    "chunk_id": "eating-p12-c02",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 12,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "your doctor whether you should have a snack \nbefore you exercise. \n\u25cf Know the signs of low blood glucose, also called \nhypoglycemia. Always carry food or glucose tablets \nto treat low blood glucose. \n\u25cf Always wear your medical identification or other ID. \n\u25cf Find an exercise buddy. Many people find they are \nmore likely to do something active if a friend joins \nthem. \n6"
+  },
+  {
+    "chunk_id": "eating-p13-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 13,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Low Blood Glucose (Hypoglycemia) \nLow blood glucose can make you feel shaky, weak, \nconfused, irritable, hungry, or tired. You may sweat \na lot or get a headache. If you have these symptoms, \ncheck your blood glucose. If it is below 70, have one \nof the following right away: \n\u25cf 3 or 4 glucose tablets \n\u25cf 1 serving of glucose gel\u2014the amount equal to \n15 grams of carbohydrate \n\u25cf 1/2 cup (4 ounces) of any fruit juice \n\u25cf 1/2 cup (4 ounces) of a regular (not diet) \nsoft drink \n\u25cf 1 cup (8 ounces) of milk \n\u25cf 5 or 6 pieces of hard candy \n\u25cf 1 tablespoon of sugar or honey \nAfter 15 minutes, check your blood glucose again. If \nit\u2019s still too low, have another serving. Repeat these \nsteps until your blood glucose level is 70 or higher. \nIf it will be an hour or more before your next meal, \nhave a snack as well. \n7"
+  },
+  {
+    "chunk_id": "eating-p14-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 14,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "The Diabetes Food Pyramid \nFats and sweets \nMilk \nVegetables \nStarches \nMeat and meat \nsubstitutes \nFruits \nThe diabetes food pyramid can help you make wise food \nchoices. It divides foods into groups, based on what they \ncontain. Eat more from the groups at the bottom of the \npyramid, and less from the groups at the top. Foods \nfrom the starches, fruits, vegetables, and milk groups are \nhighest in carbohydrate. They affect your blood glucose \nlevels the most. See pages 9, 10, and 11 to find out how \nmuch to eat from each food group. \n8"
+  },
+  {
+    "chunk_id": "eating-p15-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 15,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "How much should I eat each day? \nHave about 1,200 to 1,600 calories a day if you are a \n\u25cf small woman who exercises \n\u25cf small or medium-sized woman who wants to lose \nweight \n\u25cf medium-sized woman who does not exercise much \nChoose this many servings from these food groups \nto have 1,200 to 1,600 calories a day: \n6 starches \n2 milks \n3 vegetables \n4 to 6 ounces meat and meat \nsubstitutes \n2 fruits \nup to 3 fats \nTalk with your diabetes teacher about how to make a \nmeal plan that fits the way you usually eat, your daily \nroutine, and your diabetes medicines. Then make your \nown plan. \n9"
+  },
+  {
+    "chunk_id": "eating-p16-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 16,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Have about 1,600 to 2,000 calories a day if you are a \n\u25cf large woman who wants to lose weight \n\u25cf small man at a healthy weight \n\u25cf medium-sized man who does not exercise much \n\u25cf medium-sized or large man who wants to lose weight \nChoose this many servings from these food groups \nto have 1,600 to 2,000 calories a day: \n8 starches \n2 milks \n4 vegetables \n4 to 6 ounces meat and meat \nsubstitutes \n3 fruits \nup to 4 fats \nTalk with your diabetes teacher about how to make a \nmeal plan that fits the way you usually eat, your daily \nroutine, and your diabetes medicines. Then make your \nown plan. \n10"
+  },
+  {
+    "chunk_id": "eating-p17-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 17,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Have about 2,000 to 2,400 calories a day if you are a \n\u25cf medium-sized or large man who exercises a lot or has \na physically active job \n\u25cf large man at a healthy weight \n\u25cf medium-sized or large woman who exercises a lot or \nhas a physically active job \nChoose this many servings from these food groups \nto have 2,000 to 2,400 calories a day: \n10 starches \n2 milks \n4 vegetables \n5 to 7 ounces meat and meat \nsubstitutes \n4 fruits \nup to 5 fats \nTalk with your diabetes teacher about how to make a \nmeal plan that fits the way you usually eat, your daily \nroutine, and your diabetes medicines. Then make your \nown plan. \n11"
+  },
+  {
+    "chunk_id": "eating-p18-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 18,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Make Your Own Diabetes Food Pyramid \nEach day, I need \n_____ servings of \nfats and sweets \n_____ servings \n_____ ounces of\nof milk \nmeat and meat \nsubstitutes \n_____ servings of \nvegetables \n_____ servings \nof fruits \n_____ servings of starches \nOn pages 38 and 39, you can make your own meal plan. \nWrite down how many servings to have at your meals \nand snacks. \n12"
+  },
+  {
+    "chunk_id": "eating-p19-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 19,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Starches \nStarches are bread, grains, cereal, pasta, and starchy \nvegetables like corn and potatoes. They provide \ncarbohydrate, vitamins, minerals, and fiber. Whole grain \nstarches are healthier because they have more vitamins, \nminerals, and fiber. \nEat some starches at each meal. Eating starches is \nhealthy for everyone, including people with diabetes. \nStarches \nExamples of starches are \n\u2022 bread \n\u2022 potatoes \n\u2022 tortillas \n\u2022 pasta \n\u2022 rice \n\u2022 beans \n\u2022 corn \n\u2022 crackers \n\u2022 yams \n\u2022 pretzels \n\u2022 cereal \n\u2022 lentils \n13"
+  },
+  {
+    "chunk_id": "eating-p20-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 20,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "How much is a serving of starch? \nExamples of 1 serving: \nOR\nOR \nOR \n1 slice of \n1 small \n1/2 cup cooked \n1 6-inch \nbread \npotato \ncereal or 3/4 cup \ntortilla \ndry cereal flakes \nExamples of 2 servings: \n+ \nOR \n1 small \n1 small ear \n2 slices \npotato \nof corn \nof bread \nExamples of 3 servings: \n1 small \npotato \n1/2 cup \nof peas \n+ \nOR \n1 cup \nof rice \n1 small \nroll \n+ \nIf your plan includes more than one serving at a meal, \nyou can choose different starches or have several servings \nof one starch. \n14"
+  },
+  {
+    "chunk_id": "eating-p21-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 21,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "1. How many servings of grains, cereals, pasta, and \nstarchy vegetables (starches) do you now eat each \nday? \nI eat _____ starch servings each day. \n2. Go back to page 9, 10, or 11 to check how many \nservings of starches to have each day. \nI will eat _____ starch servings each day. \n3. I will eat this many servings of starches at \nBreakfast _________ \nSnack ____________ \nLunch ____________ \nSnack ____________ \nDinner ___________ \nSnack ____________ \nA diabetes teacher can help you with your meal \nplan. \n15"
+  },
+  {
+    "chunk_id": "eating-p22-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 22,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "What are healthy ways to eat starches? \n\u25cf Buy whole grain breads and cereals. \n\u25cf Eat fewer fried and high-fat \nstarches such as regular tortilla \nchips and potato chips, french \nfries, pastries, or biscuits. Try \npretzels, fat-free popcorn, \nbaked tortilla chips or potato chips, \nbaked potatoes, or low-fat muffins. \n\u25cf Use low-fat or fat-free plain \nyogurt or fat-free sour cream \ninstead of regular sour \ncream on a baked potato. \n\u25cf Use mustard instead of \nmayonnaise on a sandwich. \n\u25cf Use low-fat or fat-free substitutes such as low-fat \nmayonnaise or light margarine on bread, rolls, \nor toast. \n\u25cf Eat cereal with fat-free \n(skim) or low-fat (1%) milk. \n16"
+  },
+  {
+    "chunk_id": "eating-p23-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 23,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Vegetables \nVegetables provide vitamins, minerals, and fiber. They \nare low in carbohydrate. \nVegetables \nExamples of vegetables are \n\u2022 lettuce \n\u2022 peppers \n\u2022 celery \n\u2022 broccoli \n\u2022 carrots \n\u2022 chilies \n\u2022 vegetable juice \n\u2022 green beans \n\u2022 greens \n\u2022 spinach \n\u2022 tomatoes \n\u2022 cabbage \n17"
+  },
+  {
+    "chunk_id": "eating-p24-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 24,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "How much is a serving of vegetables? \nExamples of 1 serving: \nOR \nOR \n1/2 cup \n1/2 cup \n1 cup salad \ncooked carrots \ncooked \ngreen beans \nExamples of 2 servings: \n1/2 cup \ncooked \ncarrots \n1 cup \nsalad \n+ \n1/2 cup \nvegetable \njuice \n1/2 cup \ncooked \ngreen beans \n+ \nOR \nExamples of 3 servings: \n1/2 cup \nbroccoli \n1 cup \ntomato \nsauce \n+ \n1/2 cup \ncooked \ngreens \n1/2 cup cooked \ngreen beans \nand 1 small \ntomato \n+ \nOR \nIf your plan includes more than one serving at a meal, \nyou can choose several types of vegetables or have two \nor three servings of one vegetable. \n18"
+  },
+  {
+    "chunk_id": "eating-p25-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 25,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "1. How many servings of vegetables do you now eat \neach day? \nI eat _____ vegetable servings each day. \n2. Go back to page 9, 10, or 11 to check how many \nservings of vegetables to have each day. \nI will eat___________vegetable servings each day. \n3. I will eat this many servings of vegetables at \nBreakfast _________ \nSnack ____________ \nLunch ____________ \nSnack ____________ \nDinner ___________ \nSnack ____________ \nA diabetes teacher can help you with your meal \nplan. \n19"
+  },
+  {
+    "chunk_id": "eating-p26-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 26,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "What are healthy ways to eat vegetables? \n\u25cf Eat raw and cooked vegetables with \nlittle or no fat, sauces, or dressings. \n\u25cf Try low-fat or fat-free salad dressing \non raw vegetables or salads. \n\u25cf Steam vegetables using water or \nlow-fat broth. \n\u25cf Mix in some chopped onion \nor garlic. \n\u25cf Use a little vinegar or some \nlemon or lime juice. \n\u25cf Add a small piece of lean ham \nor smoked turkey instead of fat \nto vegetables when cooking. \n\u25cf Sprinkle with herbs and spices. \n\u25cf If you do use a small amount of \nfat, use canola oil, olive oil, or soft \nmargarines (liquid or tub types) \ninstead of fat from meat, butter, \nor shortening. \n20"
+  },
+  {
+    "chunk_id": "eating-p27-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 27,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Fruits \nFruits provide carbohydrate, vitamins, minerals, and \nfiber. \nFruits \nExamples of fruits include \n\u2022 apples \n\u2022 bananas \n\u2022 mango \n\u2022 fruit juice \n\u2022 raisins \n\u2022 guava \n\u2022 strawberries \n\u2022 oranges \n\u2022 papaya \n\u2022 dried fruit \n\u2022 watermelon \n\u2022 berries \n\u2022 grapefruit \n\u2022 peaches \n\u2022 canned fruit \n21"
+  },
+  {
+    "chunk_id": "eating-p28-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 28,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "How much is a serving of fruit? \nExamples of 1 serving: \nOR \nOR \n1 small \n1/2 cup juice \n1/2 grapefruit \napple \nExamples of 2 servings: \nOR \n1 banana \n1/2 cup \norange juice \n11\u20444 cups \nwhole \nstrawberries \n+ \nIf your plan includes more than one serving at a meal, \nyou can choose different types of fruit or have several \nservings of one fruit. \n22"
+  },
+  {
+    "chunk_id": "eating-p29-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 29,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "1. How many servings of fruit do you now eat each \nday? \nI eat _____ fruit servings each day. \n2. Go back to page 9, 10, or 11 to check how many \nservings of fruit to have each day. \nI will eat _____ fruit servings each day. \n3. I will eat this many servings of fruit at \nBreakfast _________ \nSnack ____________ \nLunch ____________ \nSnack ____________ \nDinner ___________ \nSnack ____________ \nA diabetes teacher can help you with your meal \nplan. \n23"
+  },
+  {
+    "chunk_id": "eating-p30-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 30,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "What are healthy ways to eat fruits? \n\u25cf Eat fruits raw or cooked, as juice with no sugar \nadded, canned in their own juice, or dried. \n\u25cf Buy smaller pieces of fruit. \n\u25cf Choose pieces of fruit more often than fruit juice. \nWhole fruit is more filling and has more fiber. \n\u25cf Save high-sugar and high-fat fruit desserts such as \npeach cobbler or cherry pie for special occasions. \n24"
+  },
+  {
+    "chunk_id": "eating-p31-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 31,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Milk \nMilk provides carbohydrate, protein, calcium, vitamins, \nand minerals. \nMilk \n25"
+  },
+  {
+    "chunk_id": "eating-p32-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 32,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "How much is a serving of milk? \nExamples of 1 serving: \nOR \n1 cup fat-free or \n1 cup fat-free (skim) or \nlow-fat yogurt \nlow-fat (1%) milk \nNote: If you are pregnant or breastfeeding, have four to \nfive servings of milk each day. \n26"
+  },
+  {
+    "chunk_id": "eating-p33-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 33,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "1. How many servings of milk do you now have each \nday? \nI have _____ milk servings each day. \n2. Go back to page 9, 10, or 11 to check how many \nservings of milk to have each day. \nI will have ___________ milk servings each day. \n3. I will have this many servings of milk at \nBreakfast _________ \nSnack ____________ \nLunch ____________ \nSnack ____________ \nDinner ___________ \nSnack ____________ \nA diabetes teacher can help you with your meal \nplan. \n27"
+  },
+  {
+    "chunk_id": "eating-p34-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 34,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "What are healthy ways to have milk? \n\u25cf Drink fat-free (skim) or low-fat (1%) milk. \n\u25cf Eat low-fat or fat-free fruit yogurt sweetened with a \nlow-calorie sweetener. \n\u25cf Use low-fat plain yogurt as a substitute for \nsour cream. \n28"
+  },
+  {
+    "chunk_id": "eating-p35-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 35,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Meat and Meat Substitutes \nThe meat and meat substitutes group includes meat, \npoultry, eggs, cheese, fish, and tofu. Eat small amounts \nof some of these foods each day. \nMeat and meat substitutes provide protein, vitamins, and \nminerals. \nMeat and Meat \nSubstitutes \nExamples of meat and meat substitutes include \n\u2022 chicken \n\u2022 eggs \n\u2022 cheese \n\u2022 beef \n\u2022 peanut butter \n\u2022 pork \n\u2022 fish \n\u2022 tofu \n\u2022 lamb \n\u2022 canned tuna or \n\u2022 cottage cheese \n\u2022 turkey \nother fish \n29"
+  },
+  {
+    "chunk_id": "eating-p36-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 36,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "How much is a serving of meat and meat \nsubstitutes? \nMeat and meat substitutes are measured in ounces. \nHere are examples. \nExamples of a 1-ounce serving: \nOR \n1 egg \n2 tablespoons of \npeanut butter \nExample of a 2-ounce serving: \n1 slice (1 ounce) of turkey \n+ \n1 slice (1 ounce) of low-fat cheese \nExample of a 3-ounce serving: \n3 ounces of cooked lean \nmeat, chicken, or fish* \n*Three ounces of meat (after cooking) is about the size \nof a deck of cards. \n30"
+  },
+  {
+    "chunk_id": "eating-p37-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 37,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "1. How many ounces of meat and meat substitutes \ndo you now eat each day? \nI eat _____ ounces of meat and meat substitutes \neach day. \n2. Go back to page 9, 10, or 11 to check how many \nounces of meat and meat substitutes to have \neach day. \nI will eat _____ ounces of meat and meat \nsubstitutes each day. \n3. I will eat this many ounces of meat and meat \nsubstitutes at \nBreakfast _________ \nSnack ____________ \nLunch ____________ \nSnack ____________ \nDinner ___________ \nSnack ____________ \nA diabetes teacher can help you with your meal \nplan. \n31"
+  },
+  {
+    "chunk_id": "eating-p38-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 38,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "What are healthy ways to eat meat and meat \nsubstitutes? \n\u25cf Buy cuts of beef, pork, ham, and lamb that have only \na little fat on them. Trim off the extra fat. \n\u25cf Eat chicken or turkey without the skin. \n\u25cf Cook meat and meat substitutes in low-fat ways: \n\u2022 broil \n\u2022 grill \n\u2022 stir-fry \n\u2022 roast \n\u2022 steam \n\u2022 microwave \n\u25cf To add more flavor, use vinegars, \nlemon juice, soy sauce, salsa, \nketchup, barbecue sauce, herbs, \nand spices. \n\u25cf Cook eggs using cooking spray or a \nnon-stick pan. \n\u25cf Limit the amount of nuts, peanut butter, \nand fried foods you eat. They are high in \nfat. \n\u25cf Check food labels. Choose low-fat or \nfat-free cheese. \n32"
+  },
+  {
+    "chunk_id": "eating-p39-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 39,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Fats and Sweets \nLimit the amount of fats and sweets you eat. Fats and \nsweets are not as nutritious as other foods. Fats have \na lot of calories. Sweets can be high in carbohydrate \nand fat. Some contain saturated fats, trans fats, and \ncholesterol that increase your risk of heart disease. \nLimiting these foods will help you lose weight and keep \nyour blood glucose and blood fats under control. \nFats and Sweets \nExamples of fats include \n\u2022 salad dressing \n\u2022 butter \n\u2022 avocado \n\u2022 oil \n\u2022 margarine \n\u2022 olives \n\u2022 cream cheese \n\u2022 mayonnaise \n\u2022 bacon \nExamples of sweets include \n\u2022 cake \n\u2022 pie \n\u2022 cookies \n\u2022 ice cream \n\u2022 syrup \n\u2022 doughnuts \n33"
+  },
+  {
+    "chunk_id": "eating-p40-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 40,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "How much is a serving of sweets? \nExamples of 1 serving: \nOR \nOR \n1 3-inch \n1 plain cake \n1 tablespoon \ncookie \ndoughnut \nmaple syrup \n34"
+  },
+  {
+    "chunk_id": "eating-p41-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 41,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "How much is a serving of fat? \nExamples of 1 serving: \nOR \n1 strip of bacon \n1 teaspoon oil \nExamples of 2 servings: \nOR \n1 tablespoon \nregular salad \ndressing \n2 tablespoons \nreduced-fat \nsalad dressing \n1 tablespoon \nreduced-fat \nmayonnaise \n+ \n35"
+  },
+  {
+    "chunk_id": "eating-p42-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 42,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "How can I satisfy my sweet tooth? \nTry having sugar-free popsicles, \ndiet soda, fat-free ice cream or \nfrozen yogurt, or sugar-free hot \ncocoa mix. \nOther tips: \n\u25cf Share desserts in restaurants. \n\u25cf Order small or child-size servings \nof ice cream or frozen yogurt. \n\u25cf Divide homemade desserts into \nsmall servings and wrap each \nindividually. Freeze \nextra servings. \nRemember, fat-free and low-sugar \nfoods still have calories. Talk with \nyour diabetes teacher about how to \nfit sweets into your meal plan. \n36"
+  },
+  {
+    "chunk_id": "eating-p43-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 43,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Alcoholic Drinks \nAlcoholic drinks have calories but no nutrients. If you \nhave alcoholic drinks on an empty stomach, they can \nmake your blood glucose level go too low. Alcoholic \ndrinks also can raise your blood fats. If you want to have \nalcoholic drinks, talk with your doctor or diabetes \nteacher about how much to have. \n37"
+  },
+  {
+    "chunk_id": "eating-p44-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 44,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "___________________________________________ \n_\n_\n_\n_\n_\n_\n_\n_\n___________________________________________ \n_\n_\n_\n_\n___________________________________________ \n_\n__\n_\n__\n_\n__\n_\n__\n_\n__\n_\n__\n_\n__\n_\n__\nYour Meal Plan \nPlan your meals and snacks for one day. Work with your \ndiabetes teacher if you need help. \n38 \nBr\nea\nk\nfast\nS\nnack\nLu\nnch\nFood Group \nFood \nHow Much \n____________\n____________\n____________\n____________\n____________\n____________\n____________\n____________\n________________\n________________\n________________\n________________\n________________\n________________\n________________\n________________\n______________ \n______________ \n______________ \n______________ \n______________ \n______________ \n______________ \n______________ \nFood Group \nFood \nHow Much \n____________\n____________\n________________\n________________\n_____________ \n_____________ \nFood Group \nFood \nHow Much \n____________\n_______"
+  },
+  {
+    "chunk_id": "eating-p44-c02",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 44,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "_______\n________________\n________________\n_____________ \n_____________ \nFood Group \nFood \nHow Much \n____________\n____________\n____________\n____________\n____________\n____________\n____________\n____________\n_______________\n_______________\n_______________\n_______________\n_______________\n_______________\n_______________\n_______________\n_____________ \n_____________ \n_____________ \n_____________ \n_____________ \n_____________ \n_____________ \n_____________"
+  },
+  {
+    "chunk_id": "eating-p45-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 45,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "___________________________________________ \n____________\n____________\n________________\n_______________\n_______________ \n______________ \n_\n_\n___________________________________________ \n____________\n____________\n____________\n____________\n____________\n____________\n____________\n____________\n_________________\n________________\n________________\n________________\n________________\n________________\n________________\n________________\n______________ \n______________ \n______________ \n______________ \n______________ \n______________ \n______________ \n______________ \n_\n_\n_\n_\n_\n_\n_\n___________________________________________ \n____________\n____________\n_________________\n________________\n______________\n_____________\n\n_\n_\n\nSnack\nSnack\nDinner\nFood Group \nFood \nHow Much \nFood Group \nFood \nHow Much \nFood Group \nFood \nHow Much \n39"
+  },
+  {
+    "chunk_id": "eating-p46-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 46,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Measuring Your Food \nTo make sure your food servings are the right size, you \ncan use \n\u25cf measuring cups \n\u25cf measuring spoons \n\u25cf a food scale \nOr you can use the guide below. Also, the Nutrition \nFacts label on food packages tells you how much of that \nfood is in one serving. \nGuide to Sensible Serving Sizes \nThis much \nis the same as \n3 ounces \n1 serving of meat, chicken, turkey, \nor fish \n1 cup \n1 serving of \n\u2022 cooked vegetables \n\u2022 salads \n\u2022 casseroles or stews, such as chili \nwith beans \n\u2022 milk \n40"
+  },
+  {
+    "chunk_id": "eating-p47-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 47,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "This much \nis the same as \n1\u20442 cup \n1 serving of \n\u2022 fruit or fruit juice \n\u2022 starchy vegetables, such as \npotatoes or corn \n\u2022 pinto beans and other dried beans \n\u2022 rice or noodles \n\u2022 cereal \n1 ounce \n1 serving of \n\u2022 snack food \n\u2022 cheese (1 slice) \n1 tablespoon \n1 serving of \n\u2022 salad dressing \n\u2022 cream cheese \n1 teaspoon \n1 serving of \n\u2022 margarine or butter \n\u2022 oil \n\u2022 mayonnaise \n41"
+  },
+  {
+    "chunk_id": "eating-p48-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 48,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "When You\u2019re Sick \nTake care of yourself when you\u2019re sick. Being sick can \nmake your blood glucose go too high. Tips on what to do \ninclude the following: \n\u25cf Check your blood glucose level every 4 hours. Write \ndown the results. \n\u25cf Keep taking your diabetes medicines. You need \nthem even if you can\u2019t keep food down. \n\u25cf Drink at least one cup (8 ounces) of water or other \ncalorie-free, caffeine-free liquid every hour while \nyou\u2019re awake. \n\u25cf If you can\u2019t eat your usual food, try drinking juice or \neating crackers, popsicles, or soup. \n\u25cf If you can\u2019t eat at all, drink clear liquids such as \nginger ale. Eat or drink something with sugar in it \nif you have trouble keeping food down, because \nyou still need calories. If you can\u2019t eat enough, \nyou increase your risk of low blood glucose, also \ncalled hypoglycemia. \n42"
+  },
+  {
+    "chunk_id": "eating-p49-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 49,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "\u25cf In people with type 1 diabetes, when blood glucose is \nhigh, the body produces ketones. Ketones can make \nyou sick. Test your urine or blood for ketones if \n\u2022 your blood glucose is above 240 \n\u2022 you can\u2019t keep food or liquids down \n\u25cf Call your health care provider right away if \n\u2022 your blood glucose has been above 240 for longer \nthan a day \n\u2022 you have ketones \n\u2022 you feel sleepier than usual \n\u2022 you have trouble breathing \n\u2022 you can\u2019t think clearly \n\u2022 you throw up more than once \n\u2022 you\u2019ve had diarrhea for more than 6 hours \n43"
+  },
+  {
+    "chunk_id": "eating-p50-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 50,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "Where can I get more information? \nDiabetes Teachers (nurses, dietitians, pharmacists, and \nother health professionals) \nTo find a diabetes teacher near you, \ncall the American Association of \nDiabetes Educators toll-free at \n1\u2013800\u2013TEAMUP4 (832\u20136874) or \nsee www.diabeteseducator.org and \nclick on \u201cFind an Educator.\u201d \nRecognized Diabetes Education Programs (teaching \nprograms approved by the American Diabetes \nAssociation) \nTo find a program near you, call the American Diabetes \nAssociation toll-free at 1\u2013800\u2013DIABETES (342\u20132383) \nor see www.diabetes.org/education/edustate2.asp on the \nInternet. \nDietitians \nTo find a dietitian near you, call the American Dietetic \nAssociation\u2019s National Center for Nutrition and \nDietetics toll-free at 1\u2013800\u2013877\u20131600 or see \nwww.eatright.org and click on \u201cFind a Nutrition \nProfessional.\u201d \n44"
+  },
+  {
+    "chunk_id": "eating-p51-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 51,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "National Diabetes \nInformation Clearinghouse \n1 Information Way \nBethesda, MD 20892\u20133560 \nPhone: 1\u2013800\u2013860\u20138747 \nFax: 703\u2013738\u20134929 \nEmail: ndic@info.niddk.nih.gov \nInternet: www.diabetes.niddk.nih.gov \nThe National Diabetes Information Clearinghouse (NDIC) is a service of \nthe National Institute of Diabetes and Digestive and Kidney Diseases \n(NIDDK). The NIDDK is part of the National Institutes of Health under \nthe U.S. Department of Health and Human Services. Established \nin 1978, the Clearinghouse provides information about diabetes to people \nwith diabetes and to their families, health care professionals, and the \npublic. The NDIC answers inquiries, develops and distributes \npublications, and works closely with professional and patient organi\u00ad\nzations and Government agencies to coordinate resources about diabetes. \nPublications produced by the Clearinghouse are carefully reviewed by b"
+  },
+  {
+    "chunk_id": "eating-p51-c02",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 51,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "agencies to coordinate resources about diabetes. \nPublications produced by the Clearinghouse are carefully reviewed by both \nNIDDK scientists and outside experts. This booklet was originally \nreviewed by Marion J. Franz, M.S., R.D., L.D., C.D.E., Minneapolis, and \nCarolyn Leontos, M.S., R.D., C.D.E., University of Nevada. \nThis publication is not copyrighted. The Clearinghouse encourages \nusers of this booklet to duplicate and distribute as many copies as \ndesired. \nThis booklet is also available at www.diabetes.niddk.nih.gov. \nThis publication may contain information about medications used to \ntreat a health condition. When this publication was prepared, the \nNIDDK included the most current information available. Occasionally, \nnew information about medication is released. For updates or for \nquestions about any medications, please contact the U.S. Food and Drug \nAdminstration at 1\u2013888\u2013"
+  },
+  {
+    "chunk_id": "eating-p51-c03",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 51,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "sed. For updates or for \nquestions about any medications, please contact the U.S. Food and Drug \nAdminstration at 1\u2013888\u2013INFO\u2013FDA (463\u20136332), a toll-free call, or visit \ntheir website at www.fda.gov. Consult your doctor for more information."
+  },
+  {
+    "chunk_id": "eating-p52-c01",
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "pdf_page": 52,
+    "printed_page_label": null,
+    "section_title": null,
+    "text": "U.S. DEPARTMENT OF HEALTH \nAND HUMAN SERVICES\nNational Institutes of Health\nNIH Publication No. 08\u20135043\nOctober 2007"
+  }
 ]
