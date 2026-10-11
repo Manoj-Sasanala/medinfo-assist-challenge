@@ -42,3 +42,33 @@ def test_generate_none_without_key(monkeypatch):
                       filename="f.pdf", pdf_page=8, text="x" * 500)
     out = gen.extractive([CT02Hit(chunk=chunk, score=0.9, rank=1)])
     assert "page 8" in out and isinstance(out, str)
+
+
+def test_corrupt_corpus_fails_closed(monkeypatch, tmp_path):
+    bad = tmp_path / "corpus.json"
+    bad.write_text("{not json", encoding="utf-8")
+    monkeypatch.setattr(ret, "CORPUS_PATH", bad)
+    ret._corpus.cache_clear()
+    try:
+        pack = ret.retrieve("What should blood glucose be before meals?")
+    finally:
+        ret._corpus.cache_clear()
+    assert pack.evidence_status == "insufficient"
+    assert pack.reason_code == "corpus_unavailable"
+
+
+def test_grounding_validator_on_live_answers():
+    from fastapi.testclient import TestClient
+    from backend.api import app
+    from backend import validate as val
+    t = TestClient(app)
+    for q in [
+        "What should blood glucose be before meals?",
+        "How much is a serving of starch?",
+        "How do I treat low blood glucose below 70?",
+    ]:
+        j = t.post("/api/chat", json={"question": q}).json()
+        assert j["status"] == "answered", q
+        pack = ret.retrieve(q, top_k=2)
+        assert val.grounded(j["answer"], pack.results), q
+        assert val.coverage(j["answer"], pack.results) >= val.MIN_COVERAGE

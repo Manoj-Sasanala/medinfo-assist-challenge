@@ -13,6 +13,12 @@ _DIAG = re.compile(
     re.I,
 )
 _EMERG = re.compile(r"\b(unconscious|not breathing|severe bleeding|chest pain|stroke|overdose)\b", re.I)
+_INJECT = re.compile(
+    r"\b(ignore (all |your |previous |prior )?instructions|disregard (all |your )?instructions|"
+    r"reveal (your )?system prompt|show (me )?(your )?system prompt|jailbreak|\bDAN\b|"
+    r"pretend (you are|to be)|act as (a |an )?doctor|override (your|safety) )",
+    re.I,
+)
 
 
 def decide(question: str) -> CT03SafetyDecision:
@@ -25,6 +31,11 @@ def decide(question: str) -> CT03SafetyDecision:
             return CT03SafetyDecision(
                 decision="emergency_redirect", reason_code="possible_emergency",
                 user_message="This sounds like a possible emergency. Call your local emergency number now.")
+        if _INJECT.search(q):
+            return CT03SafetyDecision(
+                decision="safety_redirect", reason_code="other",
+                user_message=("I only answer questions about the supplied guides and can't "
+                              "change how I work. Please ask about the guide content."))
         if _DIAG.search(q):
             return CT03SafetyDecision(
                 decision="safety_redirect",
