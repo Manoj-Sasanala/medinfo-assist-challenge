@@ -8,17 +8,34 @@
 <h1>MedInfo Assist (Plan A)</h1>
 <p class="d">General information from supplied guides only — not medical advice. Cannot diagnose or prescribe.</p>
 <input id="q" style="width:80%" placeholder="e.g. What should blood glucose be before meals?">
-<button onclick="ask()">Ask</button>
+<button id="ask">Ask</button>
 <div id="a"></div>
 <script>
-async function ask(){
-  const q=document.getElementById('q').value;
-  const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q})});
-  const j=await r.json();
-  let h=`<p class="st">status: ${j.status}</p><p>${j.answer}</p>`;
-  (j.citations||[]).forEach(c=>{h+=`<div class="c"><b>${c.document_title}</b> — physical PDF page ${c.pdf_page}<br><span class="d">${c.excerpt}</span></div>`});
-  h+=`<p class="d">${j.disclaimer}</p>`;
-  document.getElementById('a').innerHTML=h;
+// All server content is inserted as plain text nodes — never parsed as markup —
+// so answers/excerpts cannot execute in the browser (XSS-safe rendering).
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text !== undefined) n.textContent = text;
+  return n;
 }
+document.getElementById('ask').addEventListener('click', async () => {
+  const q = document.getElementById('q').value;
+  const r = await fetch('/api/chat', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question: q})});
+  const j = await r.json();
+  const box = document.getElementById('a');
+  box.replaceChildren();
+  box.appendChild(el('p', 'st', 'status: ' + j.status));
+  box.appendChild(el('p', null, j.answer));
+  (j.citations || []).forEach(c => {
+    const d = el('div', 'c');
+    const b = el('b', null, c.document_title + ' — physical PDF page ' + c.pdf_page);
+    d.appendChild(b);
+    d.appendChild(el('br'));
+    d.appendChild(el('span', 'd', c.excerpt));
+    box.appendChild(d);
+  });
+  box.appendChild(el('p', 'd', j.disclaimer));
+});
 </script>
 </body></html>
