@@ -20,7 +20,9 @@ from contracts.schemas import (
 
 ROOT = Path(__file__).resolve().parent.parent
 FRONTEND = ROOT / "frontend"
-MANIFEST = ROOT / "docs" / "MANIFEST.md"
+MANIFEST_JSON = ROOT / "data" / "processed" / "manifest.json"
+CORPUS_JSON = ROOT / "data" / "processed" / "corpus.json"
+INDEX_PATH = ROOT / "data" / "processed" / "embeddings.faiss"
 
 app = FastAPI(title="MedInfo Assist Challenge (Plan A)")
 if FRONTEND.exists():
@@ -32,30 +34,35 @@ def index() -> FileResponse:
     return FileResponse(str(FRONTEND / "index.html"))
 
 
-def _manifest() -> list[dict]:
-    # parsed from docs/MANIFEST.md is overkill; rebuild from CT-06 via build facts
-    import hashlib
-    out = []
-    for f, sid in (("Eating_Diabetes_508.pdf", "eating-and-diabetes-nih-08-5043"),
-                   ("DIA_Ch01.pdf", "dia-ch01-reference")):
-        p = ROOT / "data" / "raw" / f
-        if p.exists():
-            h = hashlib.sha256(p.read_bytes()).hexdigest()
-            import pymupdf
-            n = pymupdf.open(p).page_count
-            out.append({"source_id": sid, "filename": f, "sha256": h,
-                        "page_count": n, "extraction_status": "ok" if sid.startswith("eating") else "reference_only"})
-    return out
+def _readiness() -> dict:
+    """CT-06 readiness from committed derived artifacts (works without raw PDFs)."""
+    manifest = json.loads(MANIFEST_JSON.read_text(encoding="utf-8")) if MANIFEST_JSON.exists() else []
+    corpus = json.loads(CORPUS_JSON.read_text(encoding="utf-8")) if CORPUS_JSON.exists() else []
+    indexed = {c.get("source_id") for c in corpus}
+    sources = []
+    for m in manifest:
+        raw = ROOT / "data" / "raw" / m["filename"]
+        sources.append({**m, "raw_present": raw.exists(),
+                        "chunks_indexed": sum(1 for c in corpus if c.get("source_id") == m["source_id"])})
+    ready = bool(corpus) and INDEX_PATH.exists() and any(s["chunks_indexed"] > 0 for s in sources)
+    return {
+        "status": "ok" if ready else "not_ready",
+        "retrieval": "semantic" if INDEX_PATH.exists() else "lexical_fallback",
+        "chunks": len(corpus),
+        "index_present": INDEX_PATH.exists(),
+        "sources": sources,
+    }
 
 
 @app.get("/api/health")
 def health() -> dict:
-    return {"status": "ok", "retrieval": "semantic", "manifest": _manifest()}
+    return _readiness()
 
 
 @app.get("/api/sources")
 def sources() -> dict:
-    return {"sources": _manifest()}
+    r = _readiness()
+    return {"sources": r["sources"], "status": r["status"]}
 
 
 @app.post("/api/search")

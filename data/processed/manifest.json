@@ -1,0 +1,28 @@
+[
+  {
+    "source_id": "eating-and-diabetes-nih-08-5043",
+    "document_title": "What I Need to Know About Eating and Diabetes",
+    "filename": "Eating_Diabetes_508.pdf",
+    "sha256": "6c6d5d69d1107955122aec62f0e8139efb83781dc4a041d82df6f49022d1ee04",
+    "page_count": 52,
+    "extraction_status": "partial",
+    "empty_pages": [
+      2,
+      4,
+      6
+    ],
+    "indexed": true,
+    "notes": "Indexed."
+  },
+  {
+    "source_id": "dia-ch01-reference",
+    "document_title": "Diabetes in America Ch.1 (reference only, not indexed)",
+    "filename": "DIA_Ch01.pdf",
+    "sha256": "78d5e1234421c36a4bce6b4704b98c34122263c97a8da7dbc99b52468f4ebb4f",
+    "page_count": 39,
+    "extraction_status": "ok",
+    "empty_pages": [],
+    "indexed": false,
+    "notes": "Reference only; excluded from corpus."
+  }
+]

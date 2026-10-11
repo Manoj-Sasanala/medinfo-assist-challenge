@@ -20,6 +20,7 @@ import pymupdf
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw"
 OUT_CORPUS = ROOT / "data" / "processed" / "corpus.json"
+OUT_MANIFEST_JSON = ROOT / "data" / "processed" / "manifest.json"
 OUT_FAISS = ROOT / "data" / "processed" / "embeddings.faiss"
 OUT_MANIFEST = ROOT / "docs" / "MANIFEST.md"
 
@@ -80,7 +81,8 @@ def main() -> int:
                     "source_id": source_id, "document_title": title,
                     "filename": filename, "sha256": "",
                     "page_count": 0, "extraction_status": "not_supplied",
-                    "empty_pages": [], "notes": "File missing in data/raw/.",
+                    "empty_pages": [], "indexed": False,
+                    "notes": "File missing in data/raw/.",
                 }
             )
             print(f"NOT_SUPPLIED {filename}", flush=True)
@@ -115,11 +117,13 @@ def main() -> int:
                 "page_count": pages,
                 "extraction_status": "ok" if not empty else "partial",
                 "empty_pages": empty,
+                "indexed": index,
                 "notes": "Indexed." if index else "Reference only; excluded from corpus.",
             }
         )
         print(f"OK {filename} pages={pages} empty={empty} chunks={len(corpus)}", flush=True)
     OUT_CORPUS.write_text(json.dumps(corpus, indent=2), encoding="utf-8")
+    OUT_MANIFEST_JSON.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     lines = ["# CT-06 Source Manifest", "", f"Sources: {len(manifest)}, indexed chunks: {len(corpus)}", ""]
     for m in manifest:
         lines += [
