@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MedInfo Assist (Plan A)</title>
+<style>body{font-family:system-ui;max-width:720px;margin:2rem auto;padding:0 1rem}.c{border:1px solid #ccc;border-radius:8px;padding:.6rem;margin:.5rem 0;font-size:.9rem}.d{color:#555;font-size:.8rem}.st{font-size:.8rem;color:#666}</style>
+</head>
+<body>
+<h1>MedInfo Assist (Plan A)</h1>
+<p class="d">General information from supplied guides only — not medical advice. Cannot diagnose or prescribe.</p>
+<input id="q" style="width:80%" placeholder="e.g. What should blood glucose be before meals?">
+<button onclick="ask()">Ask</button>
+<div id="a"></div>
+<script>
+async function ask(){
+  const q=document.getElementById('q').value;
+  const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q})});
+  const j=await r.json();
+  let h=`<p class="st">status: ${j.status}</p><p>${j.answer}</p>`;
+  (j.citations||[]).forEach(c=>{h+=`<div class="c"><b>${c.document_title}</b> — physical PDF page ${c.pdf_page}<br><span class="d">${c.excerpt}</span></div>`});
+  h+=`<p class="d">${j.disclaimer}</p>`;
+  document.getElementById('a').innerHTML=h;
+}
+</script>
+</body></html>
