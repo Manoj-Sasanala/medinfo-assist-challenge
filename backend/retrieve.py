@@ -37,7 +37,10 @@ def _toks(s: str) -> list[str]:
 
 @lru_cache(maxsize=1)
 def _corpus() -> list[CT01Chunk]:
-    return [CT01Chunk(**c) for c in json.loads(CORPUS_PATH.read_text(encoding="utf-8"))]
+    try:
+        return [CT01Chunk(**c) for c in json.loads(CORPUS_PATH.read_text(encoding="utf-8"))]
+    except Exception:
+        return []  # corrupt/missing corpus fails closed downstream (insufficient)
 
 
 @lru_cache(maxsize=1)
@@ -71,6 +74,10 @@ def _lexical(query: str, top_k: int) -> list[tuple[CT01Chunk, float]]:
 
 
 def retrieve(query: str, top_k: int = 5, query_id: str = "q") -> CT02EvidencePack:
+    if not _corpus():
+        return CT02EvidencePack(query_id=query_id, evidence_status="insufficient",
+                                results=[], retrieval_method="lexical",
+                                reason_code="corpus_unavailable")
     model, index, ids = _semantic()
     if model is not None:
         qv = np.asarray(model.encode([query], normalize_embeddings=True), dtype=np.float32)

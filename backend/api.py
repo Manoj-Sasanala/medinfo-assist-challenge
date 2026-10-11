@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from backend import generate as gen
 from backend import retrieve as ret
 from backend import safety as pol
+from backend import validate as val
 from contracts.schemas import (
     CT04ChatRequest, CT05ChatResponse, CT05Citation, CT06SourceManifest,
 )
@@ -85,7 +86,9 @@ def api_chat(body: CT04ChatRequest) -> dict:
         return CT05ChatResponse(
             status="insufficient_evidence",
             answer="The supplied guides do not provide enough information to answer that reliably.").model_dump()
-    text = gen.generate(q, pack.results) or gen.extractive(pack.results)
+    text = gen.generate(q, pack.results)
+    if text is None or not val.grounded(text, pack.results):
+        text = gen.extractive(pack.results)  # ungrounded prose is never served
     cites = [CT05Citation(document_title=h.chunk.document_title, pdf_page=h.chunk.pdf_page,
                            printed_page_label=h.chunk.printed_page_label,
                            chunk_id=h.chunk.chunk_id,
