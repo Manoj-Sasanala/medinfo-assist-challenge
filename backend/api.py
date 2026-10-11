@@ -45,10 +45,10 @@ def _readiness() -> dict:
         raw = ROOT / "data" / "raw" / m["filename"]
         sources.append({**m, "raw_present": raw.exists(),
                         "chunks_indexed": sum(1 for c in corpus if c.get("source_id") == m["source_id"])})
-    ready = bool(corpus) and INDEX_PATH.exists() and any(s["chunks_indexed"] > 0 for s in sources)
+    ready = bool(corpus) and ret.semantic_ready() and any(s["chunks_indexed"] > 0 for s in sources)
     return {
         "status": "ok" if ready else "not_ready",
-        "retrieval": "semantic" if INDEX_PATH.exists() else "lexical_fallback",
+        "retrieval": "semantic" if ret.semantic_ready() else "lexical_fallback",
         "chunks": len(corpus),
         "index_present": INDEX_PATH.exists(),
         "sources": sources,
@@ -87,7 +87,8 @@ def api_chat(body: CT04ChatRequest) -> dict:
             status="insufficient_evidence",
             answer="The supplied guides do not provide enough information to answer that reliably.").model_dump()
     text = gen.generate(q, pack.results)
-    if text is None or not val.grounded(text, pack.results):
+    cited = pack.results[:2]  # exactly what the UI shows; grounding is checked against these
+    if text is None or not val.grounded(text, cited):
         text = gen.extractive(pack.results)  # ungrounded prose is never served
     cites = [CT05Citation(document_title=h.chunk.document_title, pdf_page=h.chunk.pdf_page,
                            printed_page_label=h.chunk.printed_page_label,

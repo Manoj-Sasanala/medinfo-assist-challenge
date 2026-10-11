@@ -70,11 +70,11 @@ def page_chunks(page_no: int, text: str, prefix: str) -> list[dict]:
     return [{"cid": f"{prefix}-p{page_no:02d}-c{k['n']:02d}", **k} for k in out]
 
 
-def main() -> int:
+def run(raw_dir: Path, out_corpus: Path, out_manifest_json: Path, out_manifest_md: Path) -> int:
     manifest: list[dict] = []
     corpus: list[dict] = []
     for source_id, (filename, title, index) in SOURCES.items():
-        path = RAW / filename
+        path = raw_dir / filename
         if not path.exists():
             manifest.append(
                 {
@@ -122,8 +122,14 @@ def main() -> int:
             }
         )
         print(f"OK {filename} pages={pages} empty={empty} chunks={len(corpus)}", flush=True)
-    OUT_CORPUS.write_text(json.dumps(corpus, indent=2), encoding="utf-8")
-    OUT_MANIFEST_JSON.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    if not corpus:
+        # No-clobber guard: a fresh clone has no raw PDFs (gitignored). Never
+        # replace a good committed corpus with an empty one; fail loudly instead.
+        print("ERROR: 0 chunks extracted. Refusing to overwrite existing corpus.", flush=True)
+        print("Supply the allowlisted PDFs in data/raw/ (see SOURCES above).", flush=True)
+        return 1
+    out_corpus.write_text(json.dumps(corpus, indent=2), encoding="utf-8")
+    out_manifest_json.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     lines = ["# CT-06 Source Manifest", "", f"Sources: {len(manifest)}, indexed chunks: {len(corpus)}", ""]
     for m in manifest:
         lines += [
@@ -133,9 +139,13 @@ def main() -> int:
             f"- pages: {m['page_count']} status={m['extraction_status']} empty={m['empty_pages']}",
             f"- notes: {m['notes']}", "",
         ]
-    OUT_MANIFEST.write_text("\n".join(lines), encoding="utf-8")
+    out_manifest_md.write_text("\n".join(lines), encoding="utf-8")
     print(f"WROTE corpus={len(corpus)} manifest={len(manifest)}", flush=True)
     return 0
+
+
+def main() -> int:
+    return run(RAW, OUT_CORPUS, OUT_MANIFEST_JSON, OUT_MANIFEST)
 
 
 if __name__ == "__main__":

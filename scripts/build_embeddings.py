@@ -16,17 +16,28 @@ OUT_IDS = ROOT / "data" / "processed" / "embedding_ids.json"
 MODEL = "all-MiniLM-L6-v2"
 
 
-def main() -> int:
-    corpus = json.loads(CORPUS.read_text(encoding="utf-8"))
+def build(corpus_path: Path, out_index: Path, out_ids: Path) -> int:
+    corpus = json.loads(corpus_path.read_text(encoding="utf-8"))
+    if not corpus:
+        raise ValueError("empty corpus: refusing to overwrite a good index with nothing")
     texts = [c["text"] for c in corpus]
     model = SentenceTransformer(MODEL)
     vecs = model.encode(texts, normalize_embeddings=True, show_progress_bar=False)
     vecs = np.asarray(vecs, dtype=np.float32)
     index = faiss.IndexFlatIP(vecs.shape[1])
     index.add(vecs)
-    faiss.write_index(index, str(OUT_INDEX))
-    OUT_IDS.write_text(json.dumps([c["chunk_id"] for c in corpus]), encoding="utf-8")
+    faiss.write_index(index, str(out_index))
+    out_ids.write_text(json.dumps([c["chunk_id"] for c in corpus]), encoding="utf-8")
     print(f"OK model={MODEL} dim={vecs.shape[1]} vectors={index.ntotal}", flush=True)
+    return index.ntotal
+
+
+def main() -> int:
+    try:
+        build(CORPUS, OUT_INDEX, OUT_IDS)
+    except (ValueError, OSError) as e:
+        print(f"ERROR: {e}", flush=True)
+        return 1
     return 0
 
 
