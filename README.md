@@ -17,13 +17,23 @@ as final acceptance.
 ```powershell
 python -m venv .venv; .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-python scripts/build_index.py        # PyMuPDF per-page extraction -> corpus + manifest
-python scripts/build_embeddings.py   # all-MiniLM-L6-v2 + FAISS index
 $env:GOOGLE_API_KEY = "<your key>"   # Gemini generation (optional; extractive fallback otherwise)
 python -m uvicorn backend.api:app --port 8000
 # open http://127.0.0.1:8000/
 python -m pytest -q
 ```
+
+The committed derived artifacts (`data/processed/corpus.json`, `manifest.json`,
+`embeddings.faiss`) are used as-is, so no PDFs are needed to run or test.
+Rebuild them only when the guide set changes and raw PDFs are present:
+
+```powershell
+python scripts/build_index.py        # PyMuPDF per-page extraction -> corpus + manifest
+python scripts/build_embeddings.py   # all-MiniLM-L6-v2 + FAISS index
+```
+
+Both scripts fail safely (exit 1, existing artifacts untouched) when the
+allowlisted PDFs are absent from `data/raw/`.
 
 Raw PDFs stay local (`data/raw/*.pdf` is gitignored); committed derived
 artifacts: `data/processed/corpus.json`, `manifest.json`, `embeddings.faiss`.
