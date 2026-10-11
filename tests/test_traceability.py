@@ -35,6 +35,8 @@ REGISTRY: dict[str, list[tuple[str, str]]] = {
     "R-12": [("tests.test_plana", "test_health_readiness_fields"),
              ("tests.test_plana", "test_sources_endpoint_ct06"),
              ("tests.test_plana", "test_manifest_json_matches_corpus")],
+    "R-15": [("tests.test_robustness", "test_degraded_state_visible_in_health"),
+             ("tests.test_robustness", "test_validator_mode_reported")],
 }
 
 
